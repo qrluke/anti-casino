@@ -1,7 +1,7 @@
 --Больше скриптов от автора можно найти в группе ВК: http://vk.com/qrlk.mods
 script_name("anti-casino")
 script_authors("qrlk", "homie nope", "#Maddison")
-script_version("24.01.2019")
+script_version("24.01.2019-1")
 script_dependencies("SampFuncs", "SAMP.Lua")
 
 require "lib.moonloader"
@@ -22,7 +22,7 @@ function main()
   end
   file = getGameDirectory().."\\moonloader\\resource\\casino.mp3"
   if not doesFileExist(file) then
-    downloadUrlToFile("http://qrlk.me/dev/moonloader/anti-casino/casino.mp3", file)
+    downloadUrlToFile("https://raw.githubusercontent.com/qrlk/anti-casino/master/resource/casino.mp3", file)
   end
   a1 = loadAudioStream(file)
   while true do
