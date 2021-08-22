@@ -1,4 +1,5 @@
---Больше скриптов от автора можно найти в группе ВК: http://vk.com/qrlk.mods
+require "lib.moonloader"
+
 script_name("anti-casino")
 script_authors("qrlk", "homie nope", "#Maddison")
 script_version("24.01.2019-1")
