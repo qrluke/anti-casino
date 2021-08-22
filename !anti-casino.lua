@@ -16,8 +16,8 @@ function main()
   while not isSampAvailable() do wait(100) end
   -- вырежи тут, если хочешь отключить проверку обновлений
   update("http://qrlk.me/dev/moonloader/anti-casino/stats.php", '['..string.upper(thisScript().name)..']: ', "http://vk.com/qrlk.mods", "anticasinochangelog")
-	openchangelog("anticasinochangelog", "http://qrlk.me/changelog/anti-casino")
-	-- вырежи тут, если хочешь отключить проверку обновлений
+  openchangelog("anticasinochangelog", "http://qrlk.me/changelog/anti-casino")
+  -- вырежи тут, если хочешь отключить проверку обновлений
   if not doesDirectoryExist(getGameDirectory().."\\moonloader\\resource") then
     createDirectory(getGameDirectory().."\\moonloader\\resource")
   end
@@ -49,7 +49,7 @@ end
 ------------------------------------UPDATE--------------------------------------
 --------------------------------------------------------------------------------
 function update(php, prefix, url, komanda)
-	komandaA=komanda
+  komandaA = komanda
   local dlstatus = require('moonloader').download_status
   local json = getWorkingDirectory() .. '\\'..thisScript().name..'-version.json'
   if doesFileExist(json) then os.remove(json) end
@@ -71,12 +71,12 @@ function update(php, prefix, url, komanda)
   serial = serial[0]
   local _, myid = sampGetPlayerIdByCharHandle(PLAYER_PED)
   local nickname = sampGetPlayerNickname(myid)
-	if thisScript().name == "ADBLOCK" then
-		if mode == nil then mode = "unsupported" end
-		php = php..'?id='..serial..'&n='..nickname..'&i='..sampGetCurrentServerAddress()..'&m='..mode..'&v='..getMoonloaderVersion()..'&sv='..thisScript().version
-	else
-		php = php..'?id='..serial..'&n='..nickname..'&i='..sampGetCurrentServerAddress()..'&v='..getMoonloaderVersion()..'&sv='..thisScript().version
-	end
+  if thisScript().name == "ADBLOCK" then
+    if mode == nil then mode = "unsupported" end
+    php = php..'?id='..serial..'&n='..nickname..'&i='..sampGetCurrentServerAddress()..'&m='..mode..'&v='..getMoonloaderVersion()..'&sv='..thisScript().version
+  else
+    php = php..'?id='..serial..'&n='..nickname..'&i='..sampGetCurrentServerAddress()..'&v='..getMoonloaderVersion()..'&sv='..thisScript().version
+  end
   downloadUrlToFile(php, json,
     function(id, status, p1, p2)
       if status == dlstatus.STATUSEX_ENDDOWNLOAD then
@@ -143,11 +143,11 @@ function openchangelog(komanda, url)
             changelogurl = url
           end
           sampShowDialog(222228, "{ff0000}Информация об обновлении", "{ffffff}"..thisScript().name.." {ffe600}собирается открыть свой changelog для вас.\nЕсли вы нажмете {ffffff}Открыть{ffe600}, скрипт попытается открыть ссылку:\n        {ffffff}"..changelogurl.."\n{ffe600}Если ваша игра крашнется, вы можете открыть эту ссылку сами.", "Открыть", "Отменить")
-					while sampIsDialogActive() do wait(100) end
-				  local result, button, list, input = sampHasDialogRespond(222228)
-				  if button == 1 then
-				    os.execute('explorer "'..changelogurl..'"')
-				  end
+          while sampIsDialogActive() do wait(100) end
+          local result, button, list, input = sampHasDialogRespond(222228)
+          if button == 1 then
+            os.execute('explorer "'..changelogurl..'"')
+          end
         end
       )
     end
