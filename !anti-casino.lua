@@ -38,7 +38,7 @@ end
 
 function sampev.onSendPickedUpPickup(pid)
   pX, pY, pZ = getCharCoordinates(playerPed)
-  if getDistanceBetweenCoords3d(pX, pY, pZ, 2195.0, 1677.5, 12.5) < 25 or getDistanceBetweenCoords3d(pX, pY, pZ, 2020.8, 1010.8, 10.8) < 10 then
+  if getDistanceBetweenCoords3d(pX, pY, pZ, 2195.0, 1677.5, 12.5) < 25 or getDistanceBetweenCoords3d(pX, pY, pZ, 2020.8, 1010.8, 10.8) < 10 or getDistanceBetweenCoords3d(pX, pY, pZ, 2325, 2114, 10.8) < 10 or getDistanceBetweenCoords3d(pX, pY, pZ, 2372, 2170, 10.8) < 10 then
     sampAddChatMessage("Вход в казино для тебя сегодня закрыт. У тебя денег много? Шагай отсюда!", 0xFF0000)
     sound = true
     return false
