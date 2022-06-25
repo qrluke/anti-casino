@@ -1,5 +1,6 @@
 {
   "latest": "22.08.2021",
   "updateurl": "https://raw.githubusercontent.com/qrlk/anti-casino/master/!anti-casino.lua",
-  "changelog": "https://github.com/qrlk/anti-casino/blob/master/CHANGELOG.md"
+  "changelog": "https://github.com/qrlk/anti-casino/blob/master/CHANGELOG.md",
+  "telemetry": "http://qrlk.me/dev/moonloader/anti-casino/stats.php"
 }
