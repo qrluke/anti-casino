@@ -2,7 +2,7 @@ require "lib.moonloader"
 
 script_name("anti-casino")
 script_authors("qrlk", "homie nope", "#Maddison")
-script_version("22.08.2021")
+script_version("25.06.2022")
 script_dependencies("SampFuncs", "SAMP.Lua")
 script_url("https://github.com/qrlk/anti-casino")
 
